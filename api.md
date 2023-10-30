@@ -799,11 +799,12 @@ InvalidParamErrorKind =
   | "param-missing"           # отсутствует необходимый query параметр
   | "param-invalid"
 
-InvalidTaskInfoErrorKind =
+TaskErrorKind =
   | "task-not-found"
   | "task-invalid"
+  | "too-few-tasks"
 
-InvalidGameInfoErrorKind =
+GameErrorKind =
   | "game-invalid"
 
 GeneralErrorKind =
@@ -813,7 +814,8 @@ ApiErrorKind =
   | AuthorizationErrorKind
   | ImageErrorKind
   | InvalidParamErrorKind
-  | InvalidGameInfoErrorKind
+  | TaskErrorKind
+  | GameErrorKind
   | GeneralErrorKind
 
 ApiErrorResponse = {
@@ -1218,13 +1220,18 @@ AnsweredTaskWithId = {
 
 Удаления задания по его идентификатору.
 
+Перед удалением сервер проверяет все опубликованные игры, использующие это задание.
+Если после удаления число заданий в какой-либо из них станет меньше минимального, удаление блокируется.
+
 ##### Path params
 - `task-id` (тип `TaskId`).
 
 ##### Виды ответов
 - Успех — `204 No Content`.
-- Некорректный запрос — `404 Not Found`.
-  - task-not-found — задание с данным id не найдено
+- Задание с данным id не найдено — `404 Not Found`.
+  - `task-not-found`
+- Задание используется в игре, у которой число заданий минимально — `403 Forbidden`.
+  - `too-few-tasks`
 
 ### 8.7. Изображения
 Префикс — `/api/v1/images`.
