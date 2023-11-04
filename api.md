@@ -1312,7 +1312,8 @@ Image
 
 ```rust!
 BaseCreateSessionRequest = {
-  player-count: u8  # min: 2, max: 20
+  player-count: u8    # min: 2, max: 20
+  require-ready: bool # требовать ли готовности всех игроков перед началом игры
 }
 
 FullGameInfo = {
