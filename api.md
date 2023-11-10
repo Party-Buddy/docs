@@ -921,9 +921,9 @@ IdGameInfo = {
   - `not-found` — игра с данным id не найдена.
 
 ##### Response body
-Экземпляр `GameInfo` c id = `game-id`:
+Экземпляр `IdGameInfo` c id = `game-id`.
 
-[Описание GameInfo](#GameInfo)
+[Описание IdGameInfo](#GameInfo)
 
 #### 8.5.3. (Admin API) Публикация игры
 **POST** `/api/v1/games`
