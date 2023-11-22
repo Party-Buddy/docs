@@ -1356,7 +1356,7 @@ CreateSessionRequest =
 ##### Response body
 ```rust
 {
-  session-id: SessionId
+  invite-code: InviteCode
   img-requests: [] ImageRequestResponse
 }
 ```
