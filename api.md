@@ -357,7 +357,7 @@ SessionId = uuid
 GameDetails = {
   ..BaseGameInfo
 
-  tasks: [] Task
+  tasks: [] TaskWithImage
 }
 
 Joined = {
