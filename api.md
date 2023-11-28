@@ -371,7 +371,7 @@ Joined = {
 }
 ```
 
-[Описание Task](#Описание-Task). [Описание BaseGameInfo](#GameInfo).
+[Описание TaskWithImage](#Описание-Task). [Описание BaseGameInfo](#GameInfo).
 
 Отправляет сервер при успешном (пере-)заходе клиента в сессию.
 После него сервер сразу же отправляет `GameStatus` и одно из `Waiting`, `GameStart`, `TaskStart`, `PollStart`, `TaskEnd` — в зависимости от текущей фазы игры.
