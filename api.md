@@ -542,16 +542,25 @@ TaskStart = {
 ### 5.12. Сообщение TaskAnswer
 ```
 # допустимые значения устанавливаются требованиями
-CheckedWordAnswer = str
-WordAnswer = str
+CheckedTextAnswer = {  # для заданий с ответом в виде текста с проверкой
+  type: "checked-text"
+  value: str
+}
 
-# допустимые значения: от 0 до |TaskStart.options| - 1 включительно.
-TaskOptionIndex = u8
+TextAnswer = {  # для заданий с ответом в виде текста
+  type: "text"
+  value: str
+}
+
+OptionAnswer = {  # для заданий с ответом в виде выбора варианта
+  type: "option"
+  value: u8
+}
 
 Answer =
-  | CheckedWordAnswer  # для заданий с ответом в виде текста с проверкой
-  | WordAnswer         # для заданий с ответом в виде текста
-  | TaskOptionIndex    # для заданий с ответом в виде выбора варианта
+  | CheckedTextAnswer  
+  | TextAnswer         
+  | OptionAnswer
 
 TaskAnswer = {
   ..BaseMessage
