@@ -558,8 +558,8 @@ OptionAnswer = {  # для заданий с ответом в виде выбо
 }
 
 Answer =
-  | CheckedTextAnswer  
-  | TextAnswer         
+  | CheckedTextAnswer
+  | TextAnswer
   | OptionAnswer
 
 TaskAnswer = {
@@ -656,7 +656,7 @@ TaskScoreboard = [] {
 TaskAnswers =
   # для заданий с ответом в виде текста с проверкой
   | [] {
-      value: CheckedWordAnswer  # значение ответа
+      value: CheckedTextAnswer  # значение ответа
       player-count: u16         # число игроков, которые ввели этот текст
       correct: bool             # является ли ответ верным
     }
@@ -669,7 +669,7 @@ TaskAnswers =
 
   # для заданий с ответом в виде текста
   | [] {
-      value: WordAnswer  # значение ответа
+      value: TextAnswer  # значение ответа
       votes: u16         # число голосов за ответ
     }
 
