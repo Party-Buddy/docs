@@ -355,7 +355,7 @@ Join = {
 
 ### 5.6. Сообщение Joined
 ```
-PlayerId = u32
+PlayerId = uuid
 SessionId = uuid
 
 GameDetails = {
