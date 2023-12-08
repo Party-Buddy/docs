@@ -371,6 +371,7 @@ Joined = {
   ref-id: MessageId
   player-id: PlayerId
   session-id: SessionId
+  invite-code: InviteCode | null
   max-players: u8
   game: GameDetails
 }
@@ -387,6 +388,8 @@ Joined = {
 - `ref-id`: `msg-id` сообщения `Join`.
 - `player-id`: идентификатор игрока в пределах сессии.
 - `session-id`: идентификатор сессии.
+- `invite-code`: код для подключения к сессии. Присутствует, если сессия на этапе ожидания в лобби.
+- `max-players`: максимальное число игроков в сессии.
 - `game`: информация об игре.
 
 ### 5.7. Сообщение GameStatus
