@@ -371,7 +371,7 @@ Joined = {
   ref-id: MessageId
   player-id: PlayerId
   session-id: SessionId
-  invite-code?: InviteCode
+  invite-code: InviteCode | null
   max-players: u8
   game: GameDetails
 }
